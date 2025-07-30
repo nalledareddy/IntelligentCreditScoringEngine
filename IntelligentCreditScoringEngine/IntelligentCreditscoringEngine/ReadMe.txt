@@ -13,12 +13,12 @@ Tech Stack:
 - JUnit and Mockito (for unit and integration testing)
 
 Core Features:
-1. User and Credit Profile Management**: Secure APIs to onboard users and manage profiles.
+1. User and Credit Profile Management: Secure APIs to onboard users and manage profiles.
 2. Credit Score Computation**: Backend service that calculates a score using logic built around credit history, 	income, loans, etc.
-3. Kafka Integration**: Kafka is used for asynchronous messaging between services, allowing scalability.
-4. Audit & Logs**: Every credit evaluation is logged for auditability.
+3. Kafka Integration: Kafka is used for asynchronous messaging between services, allowing scalability.
+4. Audit & Logs: Every credit evaluation is logged for auditability.
 5. Validation & Exception Handling**: Complete request validations and exception responses.
-6. Secure Design**: Best practices in API and data layer security.
+6. Secure Design: Best practices in API and data layer security.
 
 Folder Structure:
 - /src
