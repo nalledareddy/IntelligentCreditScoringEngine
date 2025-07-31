@@ -1,1 +1,105 @@
+Intelligent Credit Scoring Engine - Backend API Documentation
 
+
+Base URL
+http://localhost:8080/api
+
+
+1.Authentication APIs
+
+POST /auth/login
+Description**: Login with username and password to receive JWT token.
+Request Body:
+{
+  "username": "charan",
+  "password": "yourPassword"
+}
+
+Response:
+
+{
+  "token": "JWT_TOKEN"
+}
+
+Status Codes: `200 OK`, `401 Unauthorized`
+
+
+2.User Management
+
+GET /user/{id}
+Description**: Fetch user by ID.
+Authorization**: Bearer Token
+Path Variable**: `id` – User ID
+Response:
+{
+  "id": 101,
+  "name": "Charan",
+  "email": "charan@email.com",
+  "creditScore": 720
+}
+
+3.POST /user
+ Description**: Create a new user.
+ Request Body:
+{
+  "name": "Charan",
+  "email": "charan@email.com",
+  "income": 45000,
+  "existingDebt": 8000
+}
+
+Response:
+{
+  "message": "User created successfully",
+  "userId": 101
+}
+Status Codes: `201 Created`, `400 Bad Request`
+
+
+4.Credit Scoring
+POST /score/predict
+Description: Send user financial profile and receive predicted credit score.
+Request Body:
+{
+  "income": 45000,
+  "debt": 8000,
+  "employmentYears": 3,
+  "creditCards": 2
+}
+Response:
+{
+  "predictedScore": 684,
+  "riskLevel": "Low",
+  "approved": true
+}
+
+
+Status Codes: `200 OK`, `400 Bad Request`
+
+
+
+
+5.Admin APIs
+
+GET /admin/users
+Description: Get list of all users
+Authorization: Bearer Token
+Response:
+[
+  { "id": 101, "name": "Charan" },
+  { "id": 102, "name": "Koushik" }
+]
+
+Status Codes: `200 OK`, `403 Forbidden`
+
+
+
+6.Error Format
+
+All errors follow this format:
+
+{
+  "timestamp": "2025-07-30T18:22:00",
+  "message": "User not found",
+  "status": 404
+}
