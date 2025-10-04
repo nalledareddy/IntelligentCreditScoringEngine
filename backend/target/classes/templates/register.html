@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register User</title>
+    <style>
+        body { background: #121212; color: #fff; font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        form { background: #1e1e1e; padding: 30px; border-radius: 12px; box-shadow: 0 0 10px rgba(255,255,255,0.1); width: 400px; }
+        input, select, button { width: 100%; padding: 10px; margin: 8px 0; border: none; border-radius: 6px; }
+        input, select { background: #333; color: #fff; }
+        button { background: #6200ea; color: #fff; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #3700b3; }
+    </style>
+</head>
+<body>
+    <form action="/users/register" method="post">
+        <h2>Register User</h2>
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="number" name="income" placeholder="Annual Income (₹)" required>
+        <select name="employmentType" required>
+            <option value="">Employment Type</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Self-employed</option>
+            <option>Unemployed</option>
+        </select>
+        <input type="number" name="creditHistoryLength" placeholder="Credit History (years)">
+        <input type="number" name="loanAmount" placeholder="Current Loan Amount (₹)">
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
